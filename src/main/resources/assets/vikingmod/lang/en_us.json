@@ -1,0 +1,21 @@
+{
+  "item.vikingmod.silver": "Silver",
+  "item.vikingmod.raw_silver": "Raw Silver",
+
+  "block.vikingmod.silver_block": "Block of Silver",
+  "block.vikingmod.silver_ore": "Silver Ore",
+  "block.vikingmod.deepslate_silver_ore": "Deepslate Silver Ore",
+
+
+  "itemGroup.orestab": "Ores Tab",
+  "itemGroup.foodtab": "Food Tab",
+  "itemGroup.toolstab": "Tools Tab",
+
+  "item.vikingmod.chicken_leg": "Chicken Leg",
+
+  "item.vikingmod.silver_pickaxe": "Silver Pickaxe",
+  "item.vikingmod.silver_axe": "Silver Axe",
+  "item.vikingmod.silver_shovel": "Silver Shovel",
+  "item.vikingmod.silver_hoe": "Silver Hoe",
+  "item.vikingmod.silver_sword": "Silver Sword"
+}

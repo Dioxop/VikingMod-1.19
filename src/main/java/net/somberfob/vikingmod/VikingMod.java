@@ -11,6 +11,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.somberfob.vikingmod.block.ModBlocks;
 import net.somberfob.vikingmod.item.ModItems;
 import net.somberfob.vikingmod.painting.ModPaintings;
+import net.somberfob.vikingmod.world.feature.ModConfiguredFeatures;
+import net.somberfob.vikingmod.world.feature.ModPlacedFeatures;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -24,6 +26,9 @@ public class VikingMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
         ModPaintings.register(modEventBus);
 

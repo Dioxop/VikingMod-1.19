@@ -11,6 +11,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.somberfob.vikingmod.block.ModBlocks;
 import net.somberfob.vikingmod.item.ModItems;
 import net.somberfob.vikingmod.painting.ModPaintings;
+import net.somberfob.vikingmod.util.ModItemProperties;
 import net.somberfob.vikingmod.world.feature.ModConfiguredFeatures;
 import net.somberfob.vikingmod.world.feature.ModPlacedFeatures;
 import org.slf4j.Logger;
@@ -38,6 +39,8 @@ public class VikingMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+
+        ModItemProperties.addCustomItemProperties();
     }
 
 

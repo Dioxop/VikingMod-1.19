@@ -35,6 +35,9 @@ public class ModItems {
             () -> new HoeItem(ModTiers.SILVER, 0, 0f,
                     new Item.Properties().tab(ModCreativeModeTab.TOOLS_TAB)));
 
+    public static final RegistryObject<Item> LONGBOW = ITEMS.register("longbow",
+            () -> new BowItem(new Item.Properties().tab(ModCreativeModeTab.TOOLS_TAB).durability(500)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

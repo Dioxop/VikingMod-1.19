@@ -16,6 +16,11 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_SILVER = ITEMS.register("raw_silver",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ORES_TAB)));
 
+    public static final RegistryObject<Item> SLATE = ITEMS.register("slate",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ORES_TAB)));
+    public static final RegistryObject<Item> RAW_SLATE = ITEMS.register("raw_slate",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ORES_TAB)));
+
     public static final RegistryObject<Item> CHICKEN_LEG = ITEMS.register("chicken_leg",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Food_Tab).food(ModFoods.CHICKEN_LEG)));
 

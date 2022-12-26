@@ -35,6 +35,7 @@ public class VikingMod {
 
         modEventBus.addListener(this::commonSetup);
 
+
         MinecraftForge.EVENT_BUS.register(this);
     }
 

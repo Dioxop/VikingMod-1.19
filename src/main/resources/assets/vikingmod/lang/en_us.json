@@ -6,10 +6,19 @@
   "block.vikingmod.silver_ore": "Silver Ore",
   "block.vikingmod.deepslate_silver_ore": "Deepslate Silver Ore",
 
+  "block.vikingmod.slate_block": "Block of Slate",
+  "block.vikingmod.slate_ore": "Slate Ore",
+  "block.vikingmod.deepslate_slate_ore": "Deepslate Slate Ore",
+
+  "block.vikingmod.slate_slab": "slate Slab",
+  "block.vikingmod.slate_stairs": "slate Stairs",
+  "block.vikingmod.slate_wall": "slate Wall",
+
 
   "itemGroup.orestab": "Ores Tab",
   "itemGroup.foodtab": "Food Tab",
   "itemGroup.toolstab": "Tools Tab",
+  "itemGroup.blockstab": "Blocks Tab",
 
   "item.vikingmod.chicken_leg": "Chicken Leg",
 
@@ -19,5 +28,8 @@
   "item.vikingmod.silver_hoe": "Silver Hoe",
   "item.vikingmod.silver_sword": "Silver Sword",
 
-  "item.vikingmod.longbow": "Longbow"
+  "item.vikingmod.longbow": "Longbow",
+
+  "item.vikingmod.slate": "Slate",
+  "item.vikingmod.raw_slate": "Raw Slate"
 }

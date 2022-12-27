@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "vikingmod:block/mahogany_log_top",
+    "side": "vikingmod:block/mahogany_log"
+  }
+}

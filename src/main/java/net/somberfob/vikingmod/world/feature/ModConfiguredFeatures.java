@@ -2,6 +2,14 @@ package net.somberfob.vikingmod.world.feature;
 
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.somberfob.vikingmod.VikingMod;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
@@ -30,6 +38,24 @@ public class ModConfiguredFeatures {
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_SLATE_ORE.get().defaultBlockState())));
     public static final RegistryObject<ConfiguredFeature<?, ?>> SLATE_ORE = CONFIGURED_FEATURES.register("slate_ore",
             () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_SLATE_ORES.get(),10)));
+
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAHOGANY =
+            CONFIGURED_FEATURES.register("mahogany", () ->
+                    new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                            BlockStateProvider.simple(ModBlocks.MAHOGANY_LOG.get()),
+                            new StraightTrunkPlacer(5, 6, 3),
+                            BlockStateProvider.simple(ModBlocks.MAHOGANY_LEAVES.get()),
+                            new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
+                            new TwoLayersFeatureSize(1, 0, 2)).build()));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> MAHOGANY_SPAWN =
+            CONFIGURED_FEATURES.register("red_maple_spawn", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR,
+                    new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(
+                            ModPlacedFeatures.MAHOGANY_CHECKED.getHolder().get(),
+                            0.5F)), ModPlacedFeatures.MAHOGANY_CHECKED.getHolder().get())));
+
+
 
 
 

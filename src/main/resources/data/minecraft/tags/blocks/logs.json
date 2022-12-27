@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "vikingmod:mahogany_log",
+    "vikingmod:mahogany_wood",
+    "vikingmod:stripped_mahogany_log",
+    "vikingmod:stripped_mahogany_wood"
+  ]
+}

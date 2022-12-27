@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "vikingmod:block/stripped_mahogany_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "vikingmod:block/stripped_mahogany_wood"
+    },
+    "axis=z": {
+      "model": "vikingmod:block/stripped_mahogany_wood_horizontal",
+      "x": 90
+    }
+  }
+}

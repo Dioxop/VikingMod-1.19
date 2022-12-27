@@ -19,6 +19,7 @@ import net.somberfob.vikingmod.VikingMod;
 import net.somberfob.vikingmod.block.custom.ModFlammableRotatedPillarBlock;
 import net.somberfob.vikingmod.item.ModCreativeModeTab;
 import net.somberfob.vikingmod.item.ModItems;
+import net.somberfob.vikingmod.world.feature.tree.MahoganyTreeGrower;
 
 import java.util.function.Supplier;
 
@@ -95,7 +96,7 @@ public class ModBlocks {
                     return 20;
                 }
             }, ModCreativeModeTab.BLOCKS_TAB);
-    public static final RegistryObject<Block> MAHOGANY_LEAVES = registerBlock("MAHOGANY_leaves",
+    public static final RegistryObject<Block> MAHOGANY_LEAVES = registerBlock("mahogany_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
                     .requiresCorrectToolForDrops()){
                 @Override
@@ -114,7 +115,7 @@ public class ModBlocks {
                 }
             }, ModCreativeModeTab.BLOCKS_TAB);
 
-    public static final RegistryObject<Block> MAHOGANY_SAPLING = registerBlock("MAHOGANY_sapling",
+    public static final RegistryObject<Block> MAHOGANY_SAPLING = registerBlock("mahogany_sapling",
             () -> new SaplingBlock(new MahoganyTreeGrower(),
                     BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.BLOCKS_TAB);
 

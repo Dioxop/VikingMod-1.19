@@ -39,13 +39,6 @@ public class ModPlacedFeatures {
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-70), VerticalAnchor.aboveBottom(70)))));
 
 
-    public static final RegistryObject<PlacedFeature> MAHOGANY_CHECKED = PLACED_FEATURES.register("mahogany_checked",
-            () -> new PlacedFeature(ModConfiguredFeatures.MAHOGANY.getHolder().get(),
-                    List.of(PlacementUtils.filteredByBlockSurvival(ModBlocks.MAHOGANY_SAPLING.get()))));
-
-    public static final RegistryObject<PlacedFeature> MAHOGANY_PLACED = PLACED_FEATURES.register("mahogany_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.MAHOGANY_SPAWN.getHolder().get(), VegetationPlacements.treePlacement(
-                    PlacementUtils.countExtra(3, 0.1f, 2))));
 
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {

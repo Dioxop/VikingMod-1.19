@@ -31,6 +31,7 @@ public class VikingMod {
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
+
         ModPaintings.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);

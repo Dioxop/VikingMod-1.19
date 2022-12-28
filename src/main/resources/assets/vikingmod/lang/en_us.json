@@ -14,13 +14,10 @@
   "block.vikingmod.slate_stairs": "slate Stairs",
   "block.vikingmod.slate_wall": "slate Wall",
 
-  "block.vikingmod.mahogany_log": "Mahogany Log",
-  "block.vikingmod.mahogany_planks": "Mahogany Planks",
-  "block.vikingmod.mahogany_wood": "Mahogany Wood",
-  "block.vikingmod.stripped_mahogany_log": "Stripped Mahogany Log",
-  "block.vikingmod.stripped_mahogany_wood": "Stripped Mahogany Wood",
-  "block.vikingmod.mahogany_leaves": "Mahogany Leaves",
-  "block.vikingmod.mahogany_sapling": "Mahogany Sapling",
+
+
+  "key.category.vikingmod.vikingmod": "Viking Mod",
+  "key.vikingmod.battle_charge": "Battle Charge",
 
 
   "itemGroup.orestab": "Ores Tab",

@@ -1,5 +1,6 @@
 package net.somberfob.vikingmod.item;
 
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -39,6 +40,19 @@ public class ModItems {
     public static final RegistryObject<Item> SILVER_HOE = ITEMS.register("silver_hoe",
             () -> new HoeItem(ModTiers.SILVER, 0, 0f,
                     new Item.Properties().tab(ModCreativeModeTab.TOOLS_TAB)));
+
+    public static final RegistryObject<Item> SILVER_HELMET = ITEMS.register("silver_helmet",
+            () -> new ArmorItem(ModArmorMaterials.SILVER, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.ARMOR_TAB)));
+    public static final RegistryObject<Item> SILVER_CHESTPLATE = ITEMS.register("silver_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.SILVER, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(ModCreativeModeTab.ARMOR_TAB)));
+    public static final RegistryObject<Item> SILVER_LEGGING = ITEMS.register("silver_leggings",
+            () -> new ArmorItem(ModArmorMaterials.SILVER, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(ModCreativeModeTab.ARMOR_TAB)));
+    public static final RegistryObject<Item> SILVER_BOOTS = ITEMS.register("silver_boots",
+            () -> new ArmorItem(ModArmorMaterials.SILVER, EquipmentSlot.FEET,
+                    new Item.Properties().tab(ModCreativeModeTab.ARMOR_TAB)));
 
     public static final RegistryObject<Item> LONGBOW = ITEMS.register("longbow",
             () -> new BowItem(new Item.Properties().tab(ModCreativeModeTab.TOOLS_TAB).durability(500)));

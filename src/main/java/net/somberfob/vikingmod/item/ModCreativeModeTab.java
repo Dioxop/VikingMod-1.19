@@ -28,4 +28,10 @@ public class ModCreativeModeTab {
             return new ItemStack(ModItems.SLATE.get());
         }
     };
+    public static final CreativeModeTab ARMOR_TAB = new CreativeModeTab("armortab") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModItems.SILVER_CHESTPLATE.get());
+        }
+    };
 }

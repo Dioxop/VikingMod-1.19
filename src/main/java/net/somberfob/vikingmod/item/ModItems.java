@@ -2,11 +2,13 @@ package net.somberfob.vikingmod.item;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.somberfob.vikingmod.VikingMod;
+import net.somberfob.vikingmod.entities.ModEntities;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -57,6 +59,10 @@ public class ModItems {
     public static final RegistryObject<Item> LONGBOW = ITEMS.register("longbow",
             () -> new BowItem(new Item.Properties().tab(ModCreativeModeTab.TOOLS_TAB).durability(500)));
 
+    public static final RegistryObject<ForgeSpawnEggItem> VIKING_SPAWN_EGG = ITEMS.register("viking_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.VIKING, 0xbeb4b4, 0x655d5d,
+                    new Item.Properties()
+                            .tab(ModCreativeModeTab.MISCELLANEOUS_TAB)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

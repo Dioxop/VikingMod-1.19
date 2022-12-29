@@ -2,7 +2,11 @@ package net.somberfob.vikingmod.event;
 
 
 import net.minecraft.sounds.SoundEvents;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.somberfob.vikingmod.VikingMod;
+import net.somberfob.vikingmod.entities.ModEntities;
+import net.somberfob.vikingmod.renderer.VikingRenderer;
+import net.somberfob.vikingmod.renderer.models.VikingModel;
 import net.somberfob.vikingmod.util.KeyBinding;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
@@ -11,7 +15,7 @@ import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-
+@Mod.EventBusSubscriber(modid = VikingMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD,value = Dist.CLIENT)
 public class ClientEvents {
     @Mod.EventBusSubscriber(modid = VikingMod.MOD_ID, value = Dist.CLIENT)
     public static class ClientForgeEvents {
@@ -29,5 +33,15 @@ public class ClientEvents {
         public static void onKeyRegister(RegisterKeyMappingsEvent event) {
             event.register(KeyBinding.SHOUTING_KEY);
         }
+    }
+
+    @SubscribeEvent
+    public static void entityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.VIKING.get(), VikingRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(VikingModel.LAYER_LOCATION, VikingModel::createBodyLayer);
     }
 }

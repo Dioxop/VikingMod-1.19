@@ -22,12 +22,15 @@
   "key.category.vikingmod.vikingmod": "Viking Mod",
   "key.vikingmod.battle_charge": "Battle Charge",
 
+  "item.vikingmod.raccoon_spawn_egg": "Raccoon Spawn Egg",
+
 
   "itemGroup.orestab": "Ores Tab",
   "itemGroup.foodtab": "Food Tab",
   "itemGroup.toolstab": "Tools Tab",
   "itemGroup.blockstab": "Blocks Tab",
   "itemGroup.armortab": "Amour Tab",
+  "itemGroup.entitytab": "Entity Tab",
 
   "item.vikingmod.chicken_leg": "Chicken Leg",
 

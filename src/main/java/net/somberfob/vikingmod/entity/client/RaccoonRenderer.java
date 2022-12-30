@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.somberfob.vikingmod.VikingMod;
 import net.somberfob.vikingmod.entity.custom.RaccoonEntity;
+import software.bernie.geckolib3.model.AnimatedGeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 public class RaccoonRenderer extends GeoEntityRenderer<RaccoonEntity> {
@@ -15,7 +16,6 @@ public class RaccoonRenderer extends GeoEntityRenderer<RaccoonEntity> {
         super(renderManager, new RaccoonModel());
         this.shadowRadius = 0.3f;
     }
-
     @Override
     public ResourceLocation getTextureLocation(RaccoonEntity instance) {
         return new ResourceLocation(VikingMod.MOD_ID, "textures/entity/raccoon/raccoon.png");

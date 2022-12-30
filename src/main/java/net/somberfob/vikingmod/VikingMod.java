@@ -64,6 +64,7 @@ public class VikingMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
+         EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
         }
     }
 }

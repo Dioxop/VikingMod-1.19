@@ -1,4 +1,4 @@
-package net.somberfob.vikingmod.event.loot;
+package net.somberfob.vikingmod.event;
 
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.somberfob.vikingmod.VikingMod;

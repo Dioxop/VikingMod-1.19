@@ -2,13 +2,11 @@ package net.somberfob.vikingmod.item;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.somberfob.vikingmod.VikingMod;
-import net.somberfob.vikingmod.entity.ModEntityTypes;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -56,9 +54,6 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.SILVER, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModCreativeModeTab.ARMOR_TAB)));
 
-    public static final RegistryObject<Item> RACCOON_SPAWN_EGG = ITEMS.register("raccoon_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntityTypes.RACCOON,0x948e8d, 0x3b3635,
-                    new Item.Properties().tab(ModCreativeModeTab.ENTITY_TAB)));
 
     public static final RegistryObject<Item> LONGBOW = ITEMS.register("longbow",
             () -> new BowItem(new Item.Properties().tab(ModCreativeModeTab.TOOLS_TAB).durability(500)));

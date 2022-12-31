@@ -1,7 +1,6 @@
 package net.somberfob.vikingmod;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -10,15 +9,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.somberfob.vikingmod.block.ModBlocks;
-import net.somberfob.vikingmod.entity.ModEntityTypes;
-import net.somberfob.vikingmod.entity.client.RaccoonRenderer;
 import net.somberfob.vikingmod.item.ModItems;
 import net.somberfob.vikingmod.painting.ModPaintings;
 import net.somberfob.vikingmod.util.ModItemProperties;
 import net.somberfob.vikingmod.world.feature.ModConfiguredFeatures;
 import net.somberfob.vikingmod.world.feature.ModPlacedFeatures;
 import org.slf4j.Logger;
-import software.bernie.geckolib3.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(VikingMod.MOD_ID)
@@ -35,13 +31,6 @@ public class VikingMod {
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
-        ModEntityTypes.register(modEventBus);
-
-        GeckoLib.initialize();
-
-
-//clientSetup method
-        EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
 
 
         ModPaintings.register(modEventBus);
@@ -64,7 +53,6 @@ public class VikingMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
-         EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
         }
     }
 }

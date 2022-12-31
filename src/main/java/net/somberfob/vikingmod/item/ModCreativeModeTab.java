@@ -34,10 +34,5 @@ public class ModCreativeModeTab {
             return new ItemStack(ModItems.SILVER_CHESTPLATE.get());
         }
     };
-    public static final CreativeModeTab ENTITY_TAB = new CreativeModeTab("entitytab") {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack(ModItems.RACCOON_SPAWN_EGG.get());
-        }
-    };
+
 }

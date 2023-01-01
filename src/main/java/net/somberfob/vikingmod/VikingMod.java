@@ -10,6 +10,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.somberfob.vikingmod.block.ModBlocks;
+import net.somberfob.vikingmod.block.entities.ModBlockEntities;
+import net.somberfob.vikingmod.entities.ModEntities;
+import net.somberfob.vikingmod.item.ModItems;
+import net.somberfob.vikingmod.painting.ModPaintings;
+import net.somberfob.vikingmod.screen.ModMenuTypes;
+import net.somberfob.vikingmod.screen.fishingtrap.FishingTrapScreen;
 import net.somberfob.vikingmod.block.entity.ModBlockEntities;
 import net.somberfob.vikingmod.item.ModItems;
 import net.somberfob.vikingmod.painting.ModPaintings;
@@ -31,6 +37,10 @@ public class VikingMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEntities.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
@@ -58,7 +68,7 @@ public class VikingMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            MenuScreens.register(ModMenuTypes.FISHING_TRAP_MENU.get(), FishingTrapScreen::new);
             MenuScreens.register(ModMenuTypes.CRATE_MENU.get(), CrateScreen::new);
         }
     }

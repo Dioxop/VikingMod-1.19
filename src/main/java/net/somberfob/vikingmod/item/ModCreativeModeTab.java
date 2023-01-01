@@ -35,4 +35,10 @@ public class ModCreativeModeTab {
         }
     };
 
+    public static final CreativeModeTab MISCELLANEOUS_TAB = new CreativeModeTab("miscellaneoustab") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModItems.VIKING_SPAWN_EGG.get());
+        }
+    };
 }

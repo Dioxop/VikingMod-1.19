@@ -1,21 +1,18 @@
 package net.somberfob.vikingmod.block;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.somberfob.vikingmod.VikingMod;
+import net.somberfob.vikingmod.block.custom.FishingTrapBlock;
 import net.somberfob.vikingmod.block.custom.CrateBlock;
 import net.somberfob.vikingmod.item.ModCreativeModeTab;
 import net.somberfob.vikingmod.item.ModItems;
@@ -63,9 +60,15 @@ public class ModBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.BLOCKS_TAB);
 
+
+    public static final RegistryObject<Block> FISHING_TRAP = registerBlock("fishing_trap",
+            () -> new FishingTrapBlock(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(5f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.BLOCKS_TAB);
+
     public static final RegistryObject<Block> CRATE = registerBlock("crate",
             () -> new CrateBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(6f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.BLOCKS_TAB);
+
 
 
 

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "vikingmod:block/deepslate_slate_ore" }
+    "": {
+      "model": "vikingmod:block/deepslate_slate_ore"
+    }
   }
 }

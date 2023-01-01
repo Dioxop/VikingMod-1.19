@@ -1,11 +1,11 @@
 package net.somberfob.vikingmod.painting;
 
-import net.somberfob.vikingmod.VikingMod;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.somberfob.vikingmod.VikingMod;
 
 public class ModPaintings {
     public static final DeferredRegister<PaintingVariant> PAINTING_VARIANTS =

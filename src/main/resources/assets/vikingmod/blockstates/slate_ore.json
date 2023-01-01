@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "vikingmod:block/slate_ore" }
+    "": {
+      "model": "vikingmod:block/slate_ore"
+    }
   }
 }

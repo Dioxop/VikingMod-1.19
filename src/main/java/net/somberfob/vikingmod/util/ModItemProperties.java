@@ -15,7 +15,7 @@ public class ModItemProperties {
             if (p_174637_ == null) {
                 return 0.0F;
             } else {
-                return p_174637_.getUseItem() != p_174635_ ? 0.0F : (float)(p_174635_.getUseDuration() -
+                return p_174637_.getUseItem() != p_174635_ ? 0.0F : (float) (p_174635_.getUseDuration() -
                         p_174637_.getUseItemRemainingTicks()) / 20.0F;
             }
         });

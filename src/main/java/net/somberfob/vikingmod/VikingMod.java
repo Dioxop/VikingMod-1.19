@@ -1,6 +1,7 @@
 package net.somberfob.vikingmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -9,9 +10,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.somberfob.vikingmod.block.ModBlocks;
+import net.somberfob.vikingmod.block.entities.ModBlockEntities;
 import net.somberfob.vikingmod.entities.ModEntities;
 import net.somberfob.vikingmod.item.ModItems;
 import net.somberfob.vikingmod.painting.ModPaintings;
+import net.somberfob.vikingmod.screen.ModMenuTypes;
+import net.somberfob.vikingmod.screen.fishingtrap.FishingTrapScreen;
 import net.somberfob.vikingmod.util.ModItemProperties;
 import net.somberfob.vikingmod.world.feature.ModConfiguredFeatures;
 import net.somberfob.vikingmod.world.feature.ModPlacedFeatures;
@@ -30,9 +34,11 @@ public class VikingMod {
         ModBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
 
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
-
 
 
         ModPaintings.register(modEventBus);
@@ -54,7 +60,7 @@ public class VikingMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            MenuScreens.register(ModMenuTypes.FISHING_TRAP_MENU.get(), FishingTrapScreen::new);
         }
     }
 }

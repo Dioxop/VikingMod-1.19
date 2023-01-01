@@ -16,6 +16,11 @@ import net.somberfob.vikingmod.item.ModItems;
 import net.somberfob.vikingmod.painting.ModPaintings;
 import net.somberfob.vikingmod.screen.ModMenuTypes;
 import net.somberfob.vikingmod.screen.fishingtrap.FishingTrapScreen;
+import net.somberfob.vikingmod.block.entity.ModBlockEntities;
+import net.somberfob.vikingmod.item.ModItems;
+import net.somberfob.vikingmod.painting.ModPaintings;
+import net.somberfob.vikingmod.screen.CrateScreen;
+import net.somberfob.vikingmod.screen.ModMenuTypes;
 import net.somberfob.vikingmod.util.ModItemProperties;
 import net.somberfob.vikingmod.world.feature.ModConfiguredFeatures;
 import net.somberfob.vikingmod.world.feature.ModPlacedFeatures;
@@ -40,6 +45,9 @@ public class VikingMod {
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
 
         ModPaintings.register(modEventBus);
 
@@ -61,6 +69,7 @@ public class VikingMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.FISHING_TRAP_MENU.get(), FishingTrapScreen::new);
+            MenuScreens.register(ModMenuTypes.CRATE_MENU.get(), CrateScreen::new);
         }
     }
 }

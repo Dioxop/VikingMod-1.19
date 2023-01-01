@@ -56,6 +56,7 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.SILVER, EquipmentSlot.FEET,
                     new Item.Properties().tab(ModCreativeModeTab.ARMOR_TAB)));
 
+
     public static final RegistryObject<Item> LONGBOW = ITEMS.register("longbow",
             () -> new BowItem(new Item.Properties().tab(ModCreativeModeTab.TOOLS_TAB).durability(500)));
 

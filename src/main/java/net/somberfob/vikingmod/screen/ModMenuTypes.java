@@ -1,5 +1,6 @@
 package net.somberfob.vikingmod.screen;
 
+import net.somberfob.vikingmod.VikingMod;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -17,6 +18,9 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<FishingTrapMenu>> FISHING_TRAP_MENU =
             registerMenuType(FishingTrapMenu::new, "fishing_trap_menu");
+  
+    public static final RegistryObject<MenuType<CrateMenu>> CRATE_MENU =
+            registerMenuType(CrateMenu::new, "crate_menu");
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                   String name) {

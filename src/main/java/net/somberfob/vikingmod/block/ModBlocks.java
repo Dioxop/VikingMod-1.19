@@ -16,6 +16,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.somberfob.vikingmod.VikingMod;
+import net.somberfob.vikingmod.block.custom.CrateBlock;
 import net.somberfob.vikingmod.item.ModCreativeModeTab;
 import net.somberfob.vikingmod.item.ModItems;
 
@@ -62,11 +63,9 @@ public class ModBlocks {
             () -> new WallBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.BLOCKS_TAB);
 
-
-
-
-
-
+    public static final RegistryObject<Block> CRATE = registerBlock("crate",
+            () -> new CrateBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(6f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.BLOCKS_TAB);
 
 
 

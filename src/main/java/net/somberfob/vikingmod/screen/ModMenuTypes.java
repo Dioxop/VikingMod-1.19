@@ -18,6 +18,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<FishingTrapMenu>> FISHING_TRAP_MENU =
             registerMenuType(FishingTrapMenu::new, "fishing_trap_menu");
 
+    public static final RegistryObject<MenuType<FishingTrapMenu>> CRATE_MENU =
+            registerMenuType(FishingTrapMenu::new, "crate_menu");
+
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                   String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));

@@ -17,6 +17,11 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(FishingTrapBlockEntity::new,
                             ModBlocks.FISHING_TRAP.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<FishingTrapBlockEntity>> CRATE =
+            BLOCK_ENTITIES.register("crate", () ->
+                    BlockEntityType.Builder.of(FishingTrapBlockEntity::new,
+                            ModBlocks.FISHING_TRAP.get()).build(null));
+
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

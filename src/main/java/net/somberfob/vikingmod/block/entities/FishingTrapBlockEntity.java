@@ -32,7 +32,6 @@ import net.somberfob.vikingmod.screen.fishingtrap.FishingTrapMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -148,10 +147,10 @@ public class FishingTrapBlockEntity extends BlockEntity implements MenuProvider 
         setChanged(level, blockPos, blockState);
 
         if (entity.progress >= entity.maxProgress) {
-            ItemStack fishingLoot = getFishingLoot(level, blockPos);
-
-            startFishing(entity, level, blockPos, fishingLoot);
-
+            if (isInShallowWater(blockPos, level)) {
+                ItemStack fishingLoot = getFishingLoot(level, blockPos);
+                startFishing(entity, level, blockPos, fishingLoot);
+            }
             resetProgress(entity);
         }
     }
@@ -180,13 +179,29 @@ public class FishingTrapBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     private static boolean canFish(BlockPos blockPos, Level level, ItemStack itemStack, int pindex, SimpleContainer inventory) {
-        return isInShallowWater(blockPos, level) &&
-                canInsertAmountIntoOutputSlot(inventory, pindex) &&
-                canInsertItemInOutputSlot(inventory, itemStack, pindex);
+        return canInsertAmountIntoOutputSlot(inventory, pindex) && canInsertItemInOutputSlot(inventory, itemStack, pindex);
     }
 
     private static boolean isInShallowWater(BlockPos blockPos, Level level) {
-        return true;
+        List<Boolean> list = new ArrayList<>();
+        int allowedWaterDistance = 1;
+        int disallowedWaterDistance = 3;
+
+        for (Direction direction : Direction.values()) {
+            if (level.isWaterAt(blockPos.relative(direction, allowedWaterDistance)) && direction != Direction.DOWN) {
+                list.add(true);
+            }
+
+            if (!level.isWaterAt(blockPos.relative(direction, disallowedWaterDistance))) {
+                list.add(true);
+            }
+        }
+
+        if (list.isEmpty() || list.size() < 11) {
+            return false;
+        }
+
+        return allTrue(list);
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory, int pIndex) {
@@ -206,5 +221,13 @@ public class FishingTrapBlockEntity extends BlockEntity implements MenuProvider 
 
         return fishingLootTable.getRandomItems(builder.create(LootContextParamSets.FISHING)).get(0);
     };
+
+    private static boolean allTrue (List<Boolean> values) {
+        for (boolean value : values) {
+            if (!value)
+                return false;
+        }
+        return true;
+    }
 
 }
